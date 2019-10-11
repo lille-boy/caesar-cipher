@@ -10,5 +10,17 @@ So key 2 encrypts "HI" to "JK", but key 20 encrypts "HI" to "BC".
 
 Note: this simple "monoalphabetic substitution cipher" provides almost no security, because an attacker who has the encoded message can either use frequency analysis to guess the key, or just try all 25 keys.
 
+## Usage
+Build
+>make
+Takes 4 arguments:
+ * Option
+  * Encrypt: e
+  * Decrypt: d
+ * Key: number between 1 and 25
+ * Input file:
+Execute. Example: encrypt with key = 2
+>./caesar e 2 message.txt encrypt.txt
+
 ## Reference
 [Caesar cipher on Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)

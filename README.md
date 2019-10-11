@@ -12,15 +12,20 @@ Note: this simple "monoalphabetic substitution cipher" provides almost no securi
 
 ## Usage
 Build
->make
+
+`make`
+
 Takes 4 arguments:
- * Option
-  * Encrypt: e
-  * Decrypt: d
- * Key: number between 1 and 25
- * Input file:
-Execute. Example: encrypt with key = 2
->./caesar e 2 message.txt encrypt.txt
+* Option
+   * Encode: e
+   * Decode: d
+* Key: number between 1 and 25
+* Input file: txt format
+* Output file: txt formar
+
+Execute. Example: encode with key = 2
+
+`./caesar e 2 message.txt encrypt.txt`
 
 ## Reference
 [Caesar cipher on Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)

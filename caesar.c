@@ -20,6 +20,7 @@ const char upper_case[ALPHABET_SIZE] = \
     {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
      'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
+
 /******************************************************************************
  * Shift one character using the key
  * A non-alphabetical characted is not altered
@@ -47,7 +48,7 @@ static char substitute_one_letter(char letter, unsigned int key)
  * Input: pointer to sentence
  * Output: pointer to substitution
  *****************************************************************************/
-static void caesar_encrypt(const char *in_line, char *out_line, unsigned int key)
+static void caesar_encode(const char *in_line, char *out_line, unsigned int key)
 {
     for (int i = 0; i < LINE_LENGTH_MAX; i++) {
         out_line[i] = substitute_one_letter(in_line[i], key);
@@ -59,33 +60,24 @@ static void caesar_encrypt(const char *in_line, char *out_line, unsigned int key
 }
 
 /******************************************************************************
- * Encrypt the input sentence
- * Input: pointer to sentence
- * Output: pointer to substitution
- *****************************************************************************/
-static void caesar_decrypt()
-{
-}
-
-/******************************************************************************
  * Parses the input file line by line
  *****************************************************************************/
 void caesar_substitution(struct user_input *user)
 {
-    unsigned int line_number = 1;
 	char in_line[LINE_LENGTH_MAX];
     char out_line[LINE_LENGTH_MAX];
+    unsigned int key;
+
+    if (*user->option == 'e') {
+        key = user->key;
+    }
+    else if (*user->option == 'd') {
+        key = ALPHABET_SIZE - user->key;
+    }
 
 	while (fgets(in_line, LINE_LENGTH_MAX, user->in_message) != NULL)
 	{
-        if (DEBUG) {
-            printf("line %d: %s\n", line_number, in_line);
-        }
-
-        if (*user->option == 'e') {
-            caesar_encrypt(in_line, out_line, user->key);
-        }
+        caesar_encode(in_line, out_line, key);
         fputs(out_line, user->out_message);
-        fputs("\n", user->out_message);
 	}
 }

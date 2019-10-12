@@ -64,7 +64,7 @@ static void caesar_encode(const char *in_line, char *out_line, unsigned int key)
  *****************************************************************************/
 void caesar_substitution(struct user_input *user)
 {
-	char in_line[LINE_LENGTH_MAX];
+    char in_line[LINE_LENGTH_MAX];
     char out_line[LINE_LENGTH_MAX];
     unsigned int key;
 

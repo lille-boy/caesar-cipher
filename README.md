@@ -21,11 +21,16 @@ Takes 4 arguments:
    * Decode: d
 * Key: number between 1 and 25
 * Input file: txt format
-* Output file: txt formar
+* Output file: txt format
 
-Execute. Example: encode with key = 2
+Execute. Examples:
+1. Encode with key = 2
 
-`./caesar e 2 message.txt encrypt.txt`
+`./caesar e 2 message.txt encode.txt`
+
+2. Decode, you need to enter the original key used for encoding
+
+`./caesar d 2 encode.txt decode.txt`
 
 ## Reference
 [Caesar cipher on Wikipedia](https://en.wikipedia.org/wiki/Caesar_cipher)

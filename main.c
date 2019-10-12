@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
                         input.out_message = fopen(out_file_path, "w");
                     }
                     else {
+                        printf("No output file specified. Stored in output.txt\n");
                         input.out_message = fopen("ouput.txt", "w");
                     }
 
@@ -51,9 +52,18 @@ int main(int argc, char *argv[])
                     }
                     fclose(input.out_message);
                 }
+                fclose(input.in_message);
             }
-            fclose(input.in_message);
+            else {
+                printf("Error, missing arguments\n");
+            }
         }
+        else {
+            printf("Error, missing arguments\n");
+        }
+    }
+    else {
+        printf("Error, missing arguments\n");
     }
 
     return 0;

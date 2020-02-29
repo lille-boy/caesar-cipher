@@ -11,9 +11,11 @@ So key 2 encrypts "HI" to "JK", but key 20 encrypts "HI" to "BC".
 Note: this simple "monoalphabetic substitution cipher" provides almost no security, because an attacker who has the encoded message can either use frequency analysis to guess the key, or just try all 25 keys.
 
 ## Usage
-Build
+### Build
 
 `make`
+
+### Execute
 
 Takes 4 arguments:
 * Option

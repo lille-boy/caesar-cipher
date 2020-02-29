@@ -1,4 +1,5 @@
 #ifndef CAESAR_H
+#define CAESAR_H
 
 #define DEBUG   0
 
@@ -15,4 +16,4 @@ struct user_input {
  *****************************************************************************/
 void caesar_substitution(struct user_input *user);
 
-#endif
+#endif /* CAESAR_H */
